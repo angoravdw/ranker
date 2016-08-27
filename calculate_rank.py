@@ -158,8 +158,8 @@ def _sort_results(points):
 
     :param points: Dictionary that contains team names and associated points
 
-    :return:    Array containing strings in the format of "<Team name>: <Points>". Array is sorted where entry 0
-                is the highest scoring team.
+    :return:    Array containing strings in the format of "<Rank>. <Team name>: <Points> pt(s)".
+                Array is sorted where entry 0 is the highest scoring team.
     """
 
     # Let us at least assume that we want to do sorting efficiently....
@@ -228,7 +228,7 @@ def _write_file(filename, results):
     Writes results to a particular filename
 
     :param filename:    Full file path that will contain league point results.
-    :param results:     Array containing strings in the format of "<Team name>: <Points>".
+    :param results:     Array containing strings to write to file.
     """
     with open(filename, 'w') as file_handler:
         for item in results:

@@ -3,7 +3,7 @@ Simple "league rank" calculator to take in a file with match results and produce
 sorted according to points and names where relevant.
 
 The input format is assumed to be well formatted (in other words, no error checks are done on the format in the file). Here is
-and example of the expected input format:
+an example of the expected input format:
 
 <pre>
 Lions 3, Snakes 3
@@ -60,7 +60,7 @@ To run automated tests, ensure you are in the source folder root, then:
 
 ## Via Docker
 ### Prerequisites
-To run the docker container you will need to install Docker first. Follow installs steps, for your particular OS, here:
+To run the docker container you will need to install Docker first. Follow install steps, for your particular OS, here:
 https://docs.docker.com/engine/installation/
 
 ### Setup
@@ -71,7 +71,7 @@ https://docs.docker.com/engine/installation/
 First, we assume that the input file is located at */tmp/match_results.txt* on the host machine.
 
 To run, start up a docker container using the pre-built image:
-- ```docker run -it --name rank_container ranker bash```
+- ```docker run -it --name rank_container ranker bash``` 
 The above command will start up a container with the "rank_container" name. This is only to make the steps following easier.
 
 Next, copy the source file you need to the /tmp folder in the container. You will need to open up another
@@ -103,3 +103,8 @@ To do this:
 - Ensure you are in the source folder root
 - run ```ROOT=`pwd` ```
 - run ```docker run -it -v ${ROOT}:/src ranker bash```
+
+# Test coverage
+Unit tests cover main functionality 100%
+The actual file is covered 82%, where uncovered functionality is the simple file write, file read, argparse and 
+"main boilerplate" code.

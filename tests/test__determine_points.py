@@ -59,10 +59,10 @@ class TestDeterminePoints(unittest.TestCase):
             {
                 'input': [
                     'I wish I could WIN 0, N0T 1nV4l1d 3',
-                    '#Help Us 1, Wingzz 23',
-                    'I wish I could WIN 1, #Help Us 1'
+                    'Help Us 1, Wingzz 23',
+                    'I wish I could WIN 1, Help Us 1'
                 ],
-                'result': {'Wingzz': 3, 'I wish I could WIN': 1, '#Help Us': 1, 'N0T 1nV4l1d': 3}
+                'result': {'Wingzz': 3, 'I wish I could WIN': 1, 'Help Us': 1, 'N0T 1nV4l1d': 3}
             },
 
             # Scenario: Sample input (from brief)

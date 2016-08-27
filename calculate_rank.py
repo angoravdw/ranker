@@ -171,12 +171,14 @@ def _sort_results(points):
     # is to simply create the negative number of the points for storage in the heap. The highest number will
     # thus be the one on top - a very cool trick to save time and sort your data as well.
     #
-    # The next part was unexpected though. By pushing a tuple it seems that the heap system itself somehow
-    # understands to place the children in alphabetical order in the tree... in a way that matches our human
-    # expectations of it. I did not look at heapq code for this challenge.....
+    # The next part was unexpected though. By pushing a tuple it seems that the heap system itself
+    # understands to place the children in alphabetical order in the tree....
     #
-    # In other words, when we push (-1, "zorro") and then (-1, "Alpha") the subsequent "pops" will return
-    # (-1, "Alpha") and (-1, "zorro") in this order.
+    # Further investigation shows that it is ordered by ascii value - and since we are assuming that the input is
+    # well formed (always capital letters for team names....) the ascii ordering will work for us.
+    #
+    # In other words, when we push (-1, "Zorro") and then (-1, "Alpha") the subsequent "pops" will return
+    # (-1, "Alpha") and (-1, "Zorro") in this order.
     #
     # Thus, at popping time we can once again invert the points and our entire sorting algorithm is done... by simply
     # using the heapq library and good 'ol "-1".

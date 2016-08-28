@@ -5,7 +5,7 @@ import calculate_rank
 from calculate_rank import InputPath
 
 
-class TestCalculateRank(unittest.TestCase):
+class TestCalculate(unittest.TestCase):
 
     """
     Our test class for the rank calculation program.
@@ -72,6 +72,7 @@ class TestCalculateRank(unittest.TestCase):
 
             try:
                 calculate_rank.calculate(destination_filename)
+                self.assertFalse(True, "Exception was not hit. This is unexpected.")
             except InputPath, error:
                 self.assertEqual(
                     str(error),
@@ -87,6 +88,7 @@ class TestCalculateRank(unittest.TestCase):
 
             try:
                 calculate_rank.calculate(destination_filename)
+                self.assertFalse(True, "Exception was not hit. This is unexpected.")
             except InputPath, error:
                 self.assertEqual(
                     str(error),

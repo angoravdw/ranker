@@ -38,6 +38,12 @@ class TestSortResults(unittest.TestCase):
                 'result': ['1. Alpha, 3 pts', '1. Gamma, 3 pts', '1. Zeta, 3 pts']
             },
 
+            # Scenario: Same Points, very similar names. Alphabet differs on last letter.
+            {
+                'input': {'Alpha A': 3, 'Alpha B': 3},
+                'result': ['1. Alpha A, 3 pts', '1. Alpha B, 3 pts']
+            },
+
             # Scenario: Odd team names. Nobody is a "real" winner but some have more points. Specifically check
             #           "Rank numbers" with this one too.
             {

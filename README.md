@@ -55,7 +55,9 @@ Therefore, the resulting calculated rank will be found at */tmp/rank_results.txt
 ### Testing It
 Tests are run via python nose.
 To run automated tests, ensure you are in the source folder root, then:
-- ```nosetests tests/```
+- ```nosetests tests --with-coverage --cover-html --cover-package=calculate_rank```
+
+The results will also show you the code coverage for our calculate_rank.py file
 
 
 ## Via Docker
@@ -90,7 +92,9 @@ To run, start up a docker container using the pre-built image:
 A name is not needed to run automated tests.
 
 You will be attached to the container, then run:
-- ```nosetests tests/```
+- ```nosetests tests --with-coverage --cover-html --cover-package=calculate_rank```
+
+The results will also show you the code coverage for our calculate_rank.py file
 
 To exit any container, simply type "Exit" in the terminal connected to the container. The containers will also stop.
 
@@ -105,6 +109,5 @@ To do this:
 - run ```docker run -it -v ${ROOT}:/src ranker bash```
 
 # Test coverage
-Unit tests cover main functionality 100%
-The actual file is covered 82%, where uncovered functionality is the simple file write, file read, argparse and 
-"main boilerplate" code.
+Test coverage is done via nose "coverage" commands. Coverage results can be found in the "coverage" folder in the root
+directory and can also be browsed to if required.
